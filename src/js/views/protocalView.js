@@ -5,7 +5,7 @@ define([], function () {
 		var compiledTemplate = Template7.compile(template);
 		var renderTemplate = compiledTemplate({model: params.model});
 
-		$$('#protocalContent').append(renderTemplate);
+		$$('#protocalContent').html(renderTemplate);
 	}
 
 	return {

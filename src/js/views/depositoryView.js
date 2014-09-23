@@ -5,7 +5,7 @@ define(['utils'], function (Utils) {
 		var compiledTemplate = Template7.compile(template);
 		var renderTemplate = compiledTemplate({model: params.model});
 
-		$$('#depositoryContent').append(renderTemplate);
+		$$('#depositoryContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
 		resetSelect();
 	}

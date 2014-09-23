@@ -9,7 +9,7 @@ define(['utils'], function (Utils) {
 		var compiledTemplate = Template7.compile(template);
 		var renderTemplate = compiledTemplate({model: params.model});
 
-		$$('#profileContent').append(renderTemplate);
+		$$('#profileContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
 		resetSelect();
 	}

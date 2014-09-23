@@ -5,7 +5,7 @@ define(['utils'], function (Utils) {
 		var compiledTemplate = Template7.compile(template);
 		var renderTemplate = compiledTemplate({model: params.model, groupName: params.groupName});
 
-		$$('#accountList').append(renderTemplate);
+		$$('#accountList').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
 	}
 

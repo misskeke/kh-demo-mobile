@@ -5,7 +5,7 @@ define(['utils', 'text!popup/risk.html'], function (Utils, riskPopupTemplate) {
 		var compiledTemplate = Template7.compile(template);
 		var renderTemplate = compiledTemplate({model: params.model});
 
-		$$('#riskContent').append(renderTemplate);
+		$$('#riskContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
 	}
 

@@ -5,7 +5,7 @@ define(['utils'], function (Utils) {
 		var compiledTemplate = Template7.compile(template);
 		var renderTemplate = compiledTemplate({model: params.model});
 
-		$$('#reviewContent').append(renderTemplate);
+		$$('#reviewContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
 	}
 
