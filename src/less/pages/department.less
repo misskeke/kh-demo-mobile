@@ -1,6 +1,7 @@
 #departmentContent {
   .department-block {
     position: relative;
+    // border-top: 1px solid #dfdfdf;
     background-color: #fff;
     .list-block {
       margin-top: 2px;
@@ -41,9 +42,15 @@
     }
   }
   .department-name {
-    padding: 55px 15px;
+    padding: 35px 15px;
     text-align: center;
     background-color: #fff;
+    h2{
+      a{
+        text-decoration: underline;
+      }
+    }
+
   }
   .all {
     border-left: 1px solid #dfdfdf;
@@ -51,4 +58,57 @@
   .content-block-title {
     margin-top: 35px;
   }
+  .icon-recommend:before {
+    content: "\e600";
+  }
+  .research-result{
+    margin-left: 15px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #808080;
+    .have-result{
+      b{
+        display: block;
+        font-weight: normal;
+        line-height: 20px;
+      }
+      span{
+        padding-right: 10px;
+      }
+    }
+  }
+  .item-input{
+    position: relative;
+    .item-search{
+      position: absolute;
+      right: 0px;
+      top: 7px;
+      width: 80px;
+      height: 32px;
+      line-height: 32px;
+      border: none;
+    }
+  }
+  .icon-noresult:before {
+    content: "\e601";
+  }
+  .error-result{
+    .icon-noresult{
+      font-size: 24px;
+      text-align: center;
+      color: #d42323;
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+  }
+  .item-title{
+    display: block;
+    width: 100%;
+    .item-value{
+      display: inline-block;
+      width: 78%;
+      text-align: right;
+    }
+  }
 }
+

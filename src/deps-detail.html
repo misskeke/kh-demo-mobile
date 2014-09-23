@@ -1,0 +1,40 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link icon-only back">
+        <i class="icon icon-back"></i>
+      </a>
+    </div>
+    <div class="center sliding" id="despDetailTitle">{{title}}</div>
+    <div class="right">
+      <a href="#" class="link icon-only open-panel">
+        <i class="icon icon-bars"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="pages navbar-through no-toolbar">
+  <div data-page="depsDetail" class="page">
+    <div class="page-content" id="depsDetailContent">
+      <script id="depsDetailTemplate" type="text/template">
+      	<div class="content-block-title">营业部详细资料</div>
+      	  <div class="list-block">
+      	    <ul>
+      	    {{#model.infos}}
+      	      <li class="item-content">
+      	        <div class="item-inner">
+      	          <div class="item-title">
+      	            <span>{{key}}</span>
+      	            <span class="item-value">{{value}}</span>
+      	          </div>
+      	        </div>
+      	      </li>
+      	    {{/model.infos}}
+      	    </ul>
+      	</div>
+      </script>
+    </div>
+  </div>
+</div>
+

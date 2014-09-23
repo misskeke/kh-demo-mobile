@@ -20,8 +20,7 @@ var serveConfig = {
 		'src/js/**/*.js',
 		'src/api/**/*.json',
 		'src/img/*.{png|gif}',
-		'src/font/iconfont.{svg|ttf}',
-		'src/mustache/*.mustache'
+		'src/font/iconfont.{svg|ttf}'
 	],
 	server: {
 		baseDir: 'src/'

@@ -5374,6 +5374,145 @@ html.android .theme-red .select-radio[type="radio"]:checked + .select-trigger:af
 html.android .theme-red progress {
   background-color: #ff3b30;
 }
+.color-lightblue {
+  color: #4c90cf;
+}
+.list-block .item-link.list-button.color-lightblue,
+.tabbar a.active.color-lightblue,
+a.color-lightblue {
+  color: #4c90cf;
+}
+.label-switch input[type="checkbox"]:checked + .checkbox.color-lightblue,
+.label-switch.color-lightblue input[type="checkbox"]:checked + .checkbox {
+  background-color: #4c90cf;
+}
+.color-lightblue.button:not(.button-fill),
+.color-lightblue.buttons-row .button,
+.theme-lightblue .button:not(.button-fill) {
+  border-color: #4c90cf;
+}
+html:not(.watch-active-state) .color-lightblue.button:not(.button-fill):active,
+html:not(.watch-active-state) .color-lightblue.buttons-row .button:active,
+html:not(.watch-active-state) .theme-lightblue .button:not(.button-fill):active,
+.color-lightblue.button:not(.button-fill).active-state,
+.color-lightblue.buttons-row .button.active-state,
+.theme-lightblue .button:not(.button-fill).active-state {
+  background-color: rgba(76, 144, 207, 0.15);
+}
+.color-lightblue.button:not(.button-fill).active,
+.color-lightblue.buttons-row .button.active,
+.theme-lightblue .button:not(.button-fill).active {
+  background-color: #4c90cf;
+  color: #fff;
+}
+.theme-lightblue .button.button-fill,
+.button.button-fill.color-lightblue {
+  background: #4c90cf;
+  color: #fff;
+}
+.color-lightblue i.icon,
+.theme-lightblue i.icon,
+i.icon.color-lightblue,
+i.icon.theme-lightblue {
+  color: #4c90cf;
+}
+i.icon-next.color-lightblue,
+i.icon-next.theme-lightblue,
+.theme-lightblue i.icon-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'><g><path fill='%234c90cf' d='M1,1.6l11.8,5.8L1,13.4V1.6 M0,0v15l15-7.6L0,0L0,0z'/></g></svg>");
+}
+i.icon-prev.color-lightblue,
+i.icon-prev.theme-lightblue,
+.theme-lightblue i.icon-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'><g><path fill='%234c90cf' d='M14,1.6v11.8L2.2,7.6L14,1.6 M15,0L0,7.6L15,15V0L15,0z'/></g></svg>");
+}
+i.icon-back.color-lightblue,
+i.icon-back.theme-lightblue,
+.theme-lightblue i.icon-back {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'><path d='M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z' fill='%234c90cf'/></svg>");
+}
+i.icon-bars.color-lightblue,
+i.icon-bars.theme-lightblue,
+.theme-lightblue i.icon-bars {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 26'><path fill='%234c90cf' d='M0,0h4v4H0V0z M8,1h34v2H8V1z M0,11h4v4H0V11z M8,12h34v2H8V12z M0,22h4v4H0V22z M8,23h34v2H8V23z'/></svg>");
+}
+.theme-lightblue a,
+.theme-lightblue .item-link.list-button {
+  color: #4c90cf;
+}
+.theme-lightblue .tabbar a,
+.tabbar.theme-lightblue a {
+  color: inherit;
+}
+.theme-lightblue .tabbar a.active,
+.tabbar.theme-lightblue a.active {
+  color: #4c90cf;
+}
+.theme-lightblue .range-slider input[type="range"]::-webkit-slider-thumb:before,
+.range-slider.theme-lightblue input[type="range"]::-webkit-slider-thumb:before {
+  background-color: #4c90cf;
+}
+.theme-lightblue label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox,
+.theme-lightblue label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox {
+  background-color: #4c90cf;
+}
+.theme-lightblue label.label-radio input[type="checkbox"]:checked ~ .item-inner,
+.theme-lightblue label.label-radio input[type="radio"]:checked ~ .item-inner {
+  background-image: url("data:image/svg+xml;charset=utf-8, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'><polygon fill='%234c90cf' points='11.6,0 4.4,7.2 1.4,4.2 0,5.6 4.4,10 4.4,10 4.4,10 13,1.4 '/></svg>");
+}
+.theme-lightblue .slider-pagination-active {
+  background-color: #4c90cf;
+}
+.bg-lightblue,
+.button.button-fill.bg-lightblue,
+a.bg-lightblue,
+.list-block .swipeout-actions-left a.bg-lightblue,
+.list-block .swipeout-actions-right a.bg-lightblue {
+  background-color: #4c90cf;
+}
+.border-lightblue {
+  border-color: #4c90cf;
+}
+.theme-lightblue .info .hotline,
+.theme-lightblue .icon-wait,
+.theme-lightblue .score,
+.theme-lightblue .step .step-item.current,
+.theme-lightblue #departmentContent .department-name,
+.theme-lightblue #departmentContent .department-badge,
+.theme-lightblue #videoReady .tip .iconfont,
+.theme-lightblue #videoWait .wait-indicator .wait-num {
+  color: #4c90cf;
+}
+.theme-lightblue progress::-webkit-progress-value {
+  background-color: #4c90cf;
+}
+.theme-lightblue .select-radio[type="radio"]:checked + .select-trigger {
+  color: #4c90cf;
+  border-color: #4c90cf;
+  background-image: url("data:image/svg+xml;charset=utf-8, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'><polygon fill='%234c90cf' points='11.6,0 4.4,7.2 1.4,4.2 0,5.6 4.4,10 4.4,10 4.4,10 13,1.4 '/></svg>");
+}
+.navbar-lightblue {
+  background-color: #4c90cf;
+  color: #fff;
+}
+.navbar-lightblue a.link {
+  color: #fff !important;
+}
+.navbar-lightblue i.icon-back {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'><path d='M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z' fill='%23ffffff'/></svg>") !important;
+}
+.navbar-lightblue i.icon-bars {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 26'><path fill='%23ffffff' d='M0,0h4v4H0V0z M8,1h34v2H8V1z M0,11h4v4H0V11z M8,12h34v2H8V12z M0,22h4v4H0V22z M8,23h34v2H8V23z'/></svg>") !important;
+}
+/* Android */
+html.android .theme-lightblue label.label-radio input[type="checkbox"]:checked ~ .item-inner:after,
+html.android .theme-lightblue label.label-radio input[type="radio"]:checked ~ .item-inner:after,
+html.android .theme-lightblue .select-radio[type="radio"]:checked + .select-trigger:after {
+  background-image: url("data:image/svg+xml;charset=utf-8, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'><polygon fill='%234c90cf' points='11.6,0 4.4,7.2 1.4,4.2 0,5.6 4.4,10 4.4,10 4.4,10 13,1.4 '/></svg>");
+}
+html.android .theme-lightblue progress {
+  background-color: #4c90cf;
+}
 /* ==========================================================================
    Modify Framework7 original class
    ========================================================================== */
@@ -5502,6 +5641,7 @@ html.android .list-block .item-link .item-inner:after {
   background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 60 120' xmlns='http://www.w3.org/2000/svg'><path d='m60 61.5-38.25 38.25-9.75-9.75 29.25-28.5-29.25-28.5 9.75-9.75z' fill='%23c7c7cc'/></svg>");
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  overflow: hidden;
 }
 html.android .row .col-50 {
   width: 46%;
@@ -6047,15 +6187,66 @@ html.android progress {
   font-size: 20px;
 }
 #departmentContent .department-name {
-  padding: 55px 15px;
+  padding: 35px 15px;
   text-align: center;
   background-color: #fff;
+}
+#departmentContent .department-name h2 a {
+  text-decoration: underline;
 }
 #departmentContent .all {
   border-left: 1px solid #dfdfdf;
 }
 #departmentContent .content-block-title {
   margin-top: 35px;
+}
+#departmentContent .icon-recommend:before {
+  content: "\e600";
+}
+#departmentContent .research-result {
+  margin-left: 15px;
+  font-weight: normal;
+  font-size: 12px;
+  color: #808080;
+}
+#departmentContent .research-result .have-result b {
+  display: block;
+  font-weight: normal;
+  line-height: 20px;
+}
+#departmentContent .research-result .have-result span {
+  padding-right: 10px;
+}
+#departmentContent .item-input {
+  position: relative;
+}
+#departmentContent .item-input .item-search {
+  position: absolute;
+  right: 0px;
+  top: 7px;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  border: none;
+}
+#departmentContent .icon-noresult:before {
+  content: "\e601";
+}
+#departmentContent .error-result .icon-noresult {
+  font-size: 24px;
+  text-align: center;
+  color: #d42323;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+#departmentContent .item-title {
+  display: block;
+  width: 100%;
+}
+#departmentContent .item-title .item-value {
+  display: inline-block;
+  width: 78%;
+  text-align: right;
 }
 #riskContent .list-block {
   counter-reset: options;

@@ -138,7 +138,7 @@ define(['views/loginView', 'GS', 'services/openTypeService'], function (View, GS
 					if (data.errorNo === 0) {
 						View.inputBlur();
 						GS.setCurrentUser(data.sid, data.user);
-						mainView.loadPage('department.html');
+						mainView.loadPage('account.html');
 						khApp.hideIndicator();
 					} else {
 						khApp.hideIndicator();

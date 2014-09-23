@@ -1,104 +1,51 @@
 define(['views/accountView'], function (View) {
 
 	var bindings = [{
-		element: '.select-all',
+		element: '.account-next-button',
 		event: 'click',
-		handler: selectAll
-	}, {
-		element: '#accountList input[type="checkbox"]',
-		event: 'change',
-		handler: syncSelect
+		handler: nextSubmit
 	}];
 
-	function init(query) {
-		var valueString = decodeURI(query.value);
-		var title = query.title;
-
-		View.renderTitle(title);
-
-		$$.ajax({
-			url: 'api/account.json',
-			type: 'GET',
-			data: {title: title},
-			success: function (data) {
-				data = JSON.parse(data);
-				if (data.errorNo === 0) {
-					View.render({
-						model: data.model,
-						bindings: bindings
-					});
-					$$('#accountList input[type="checkbox"]').each(function () {
-						if (valueString.indexOf(this.value) !== -1) {
-							this.checked = true;
-						}
-					});
-				}
-			}
+	function init() {
+		View.render({
+			bindings: bindings
 		});
 	}
 
-	function selectAll() {
-		var options = $$('#accountList input[type="checkbox"]'),
-			values = [],
-			source,
-			finalValue;
+	function collectResult() {
+		var option = $$('#accountContent option');
+		var	stockActs = '';
+		var	fundActs = '';
+		var	otherActs = '';
 
-		options.each(function () {
-			source = $$('#signContent input[name="' + this.name + '"]');
-			this.checked = true;
-			values.push(this.value);
-			finalValue = values.join(' ');
-			source.val(finalValue);
-			source[0].checked = finalValue.length === 0 ? false : true;
-		});
-	}
+		option.each(function () {
+			var selected = $$(this).prop('selected');
+			if (!selected) return;
 
-	function syncSelect() {
-		var source = $$('#signContent input[name="' + this.name + '"]'),
-			target = this,
-			value = this.value,
-			finalValue;
+			var type = $$(this).data('type');
+			var code = this.value;
 
-		source.each(function () {
-			target.checked ? add(this, value) : remove(this, value);
 
-			finalValue = this.value;
-			this.checked = finalValue.length === 0 ? false : true;
-		});
-	}
-
-	function add(target, value) {
-		if (typeof target.value === 'undefined') return;
-
-		if (target.value.length === 0) {
-			$$(target).val(value);
-		} else {
-			var values = target.value.split(' ');
-
-			if (values.indexOf(value) === -1) {
-				values.push(value);
-			}
-
-			$$(target).val(values.join(' '));
-		}
-	}
-
-	function remove(target, value) {
-		var values = target.value.split(' ');
-
-		if (values.indexOf(value) !== -1) {
-			if (values.length === 1) {
-				$$(target).val('');
+			if (type === '1002') {
+				stockActs += code + ',';
+			} else if (type === '1003') {
+				fundActs += code + ',';
 			} else {
-				var valueReverse = [];
-				values.map(function (v, i) {
-					if (v !== value) {
-						valueReverse.push(v);
-					}
-				});
-				$$(target).val(valueReverse.join(' '));
+				otherActs += code + ',';
 			}
+		});
+
+		return {
+			stockActs: stockActs,
+			fundActs: fundActs,
+			otherActs: otherActs
 		}
+	}
+
+	function nextSubmit() {
+		var resultData = collectResult();
+		console.log(resultData);
+		mainView.loadPage('department.html');
 	}
 
 	return {

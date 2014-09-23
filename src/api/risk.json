@@ -45,7 +45,7 @@
       {
         "index": 5,
         "topic": "您的投资经验有哪些？",
-        "multi": true,
+        "multi": false,
         "options": [
           {"option": "除银行活期账户和定期存款外，我基本没有其他投资经验", "value": "1", "question_no": "eee"},
           {"option": "股票", "value": "2", "question_no": "eee"},

@@ -55,18 +55,28 @@ define(['views/riskView'], function (View) {
 	 * @return {void}
 	 */
 	function autoNext() {
+		var topic_length = $$('.topic-options').length
 		var index = $$(this).data('index');
+
 		if (index === 'multi') return; // 多选不滚动
 
-		var nextIndex = +index + 1;
-		setTimeout((function (_this) {
-			return function () {
-				var checked = $$(_this).find('input:checked');
-				if (checked.length > 0) {
-					scrollToTopic(nextIndex);
-				}
-			};
-		})(this), 200);
+		if (index == topic_length) {
+			var nextBtn = $$('.risk-submit-button');
+			var offset = nextBtn[0].offsetTop;
+			var gutter = parseInt(nextBtn.css('margin-top'), 10) + navbar_height;
+
+			$$('#riskContent').scrollTop(offset - gutter, 200);
+		} else {
+			var nextIndex = +index + 1;
+			setTimeout((function (_this) {
+				return function () {
+					var checked = $$(_this).find('input:checked');
+					if (checked.length > 0) {
+						scrollToTopic(nextIndex);
+					}
+				};
+			})(this), 200);
+		}
 	}
 
 	/**
