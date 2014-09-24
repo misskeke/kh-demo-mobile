@@ -4,12 +4,20 @@ define(['views/accountView'], function (View) {
 		element: '.account-next-button',
 		event: 'click',
 		handler: nextSubmit
+	}, {
+		element: '#accountContent select',
+		event: 'change',
+		handler: checkSelected
 	}];
 
 	function init() {
 		View.render({
 			bindings: bindings
 		});
+	}
+
+	function checkSelected() {
+		View.checkSelected(this);
 	}
 
 	function collectResult() {

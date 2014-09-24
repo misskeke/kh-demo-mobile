@@ -283,24 +283,48 @@ html.android .row .col-33 {
   transform: translate(-50%, -50%);
 }
 
+// .agree-block {
+//   .flexbox();
+//   .align-items(flex-start);
+//   font-size: 15px;
+//   .item-media {
+//     .flexbox();
+//     .flex-wrap(no-wrap);
+//     .flex-shrink(0);
+//     .border-box();
+//   }
+//   .item-inner {
+//     width: 100%;
+//     margin-left: 10px;
+//     .flexbox();
+//     .border-box();
+//     .item-title {
+//       .flex-shrink(1);
+//     }
+//   }
+//   i.icon-form-checkbox {
+//     width: 18px !important;
+//     height: 18px !important;
+//     border-radius: 0 !important;
+//     background-color: #fff;
+//   }
+// }
+
 .agree-block {
   .flexbox();
-  .align-items(flex-start);
-  font-size: 15px;
+  margin-bottom: 15px;
   .item-media {
     .flexbox();
     .flex-wrap(no-wrap);
     .flex-shrink(0);
     .border-box();
   }
-  .item-inner {
-    width: 100%;
+  .item-title {
+    height: 20px;
     margin-left: 10px;
-    .flexbox();
-    .border-box();
-    .item-title {
-      .flex-shrink(1);
-    }
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   i.icon-form-checkbox {
     width: 18px !important;
