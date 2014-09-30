@@ -7,6 +7,7 @@ define(['utils'], function (Utils) {
 
 		$$('#reviewContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
+		Utils.setButtonPosition('.review-next-button');
 	}
 
 	return {

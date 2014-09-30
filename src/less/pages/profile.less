@@ -1,7 +1,4 @@
 #profileContent {
-  .list-block {
-    margin-top: 0;
-  }
   input[type="text"],
   input[type="tel"],
   textarea,
@@ -11,5 +8,42 @@
   }
   .item-title {
     color: #999;
+  }
+  .item-input {
+    .flexbox();
+    .justify-content(flex-end);
+    .align-items(center);
+    .mark {
+      padding: 0 10px;
+      text-align: center;
+    }
+  }
+  input.select-date {
+    padding: 0;
+    width: 80px;
+    text-align: center;
+  }
+}
+
+#dateSelector {
+  .date-content {
+    margin-top: 10px;
+    .flexbox();
+    .justify-content(center);
+    .align-items(flex-end);
+
+    .item-title {
+      white-space: normal;
+    }
+
+    .item-inner {
+      .flex-shrink(1);
+    }
+  }
+  select {
+    font-size: 15px;
+  }
+  .agree-block .item-title {
+    font-size: 15px;
   }
 }

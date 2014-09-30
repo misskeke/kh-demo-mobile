@@ -2,6 +2,7 @@ define(['utils', 'text!popup/video.html'], function (Utils, videoPopupTemplate) 
 
 	function render(params) {
 		Utils.bindEvents(params.bindings);
+		Utils.setButtonPosition('.video-start-button');
 	}
 
 	function renderPopup(params) {

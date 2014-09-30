@@ -56,7 +56,6 @@ define(['views/certView'], function (View) {
 
 	function doneCallback() {
 		View.showAuditAfter();
-		khApp.closeModal();
 		mainView.loadPage('sign.html');
 	}
 

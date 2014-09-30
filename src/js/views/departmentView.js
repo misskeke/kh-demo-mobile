@@ -7,7 +7,7 @@ define(['utils'], function (Utils) {
 
 		// $$('#departmentContent').append(renderTemplate);
 		Utils.bindEvents(params.bindings);
-		Utils.setButtonPosition('.department-next-button');
+		// Utils.setButtonPosition('.department-next-button');
 	}
 
 	function renderSelect(params) {

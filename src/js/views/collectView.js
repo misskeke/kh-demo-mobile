@@ -7,6 +7,7 @@ define(['utils'], function (Utils) {
 
 		$$('#collectContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
+		Utils.setButtonPosition('.collect-next-button');
 	}
 
 	function showPhotoFront(url) {

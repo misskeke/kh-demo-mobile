@@ -2,6 +2,7 @@ define(['utils', 'text!popup/cert.html'], function (Utils, certPopupTemplate) {
 
 	function render(params) {
 		Utils.bindEvents(params.bindings);
+		Utils.setButtonPosition('.cert-request-button');
 	}
 
 	function renderPopup(params) {

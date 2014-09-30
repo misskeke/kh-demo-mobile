@@ -17,10 +17,13 @@ define([], function () {
 	 * @param {String} selector
 	 */
 	function setButtonPosition(selector) {
-		var pageContent = $$(selector).parents('.page-content');
-		$$(selector).removeClass('fixed-bottom');
-		if (!isScroll(pageContent[0])) {
-			$$(selector).addClass('fixed-bottom');
+		var pageContent = $$(selector).parents('.page-content')[0];
+		var isScrollable = isScroll(pageContent);
+
+		if (isScrollable) {
+			$$(selector).removeClass('fixed-bottom');
+		} else {
+			$$(selector).addClass('fixed-bottom bottom-button');
 		}
 	}
 

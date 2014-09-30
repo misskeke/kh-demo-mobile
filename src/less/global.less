@@ -147,9 +147,9 @@ html.android .row.no-gutter .col-50 {
   width: 50%;
 }
 
-html.android .row .col-33 {
-  width: 30%;
-}
+// html.android .row .col-33 {
+//   width: 30%;
+// }
 
 /* ==========================================================================
    Add mine
@@ -164,8 +164,8 @@ html.android .row .col-33 {
 }
 
 .fixed-bottom {
-  position: fixed;
-  bottom: 30px;
+  position: absolute;
+  bottom: 18px;
   width: 90%; /* Android */
   width: calc(~"100% - 30px");
 }
@@ -206,12 +206,12 @@ html.android .row .col-33 {
 }
 
 .step {
-  position: absolute;
-  top: 44px;
-  left: 0;
-  z-index: 999;
+  // position: absolute;
+  // top: 44px;
+  // left: 0;
+  // z-index: 999;
   .size(100%, 30px);
-  box-sizing: border-box;
+  .border-box();
   padding: 7px 0;
   margin: 0;
   border-bottom: 1px solid #e5e5e3;
@@ -234,7 +234,7 @@ html.android .row .col-33 {
       width: 6px;
       height: 10px;
       margin-left: 99%;
-      margin-top: -13px;
+      margin-top: -15px;
       opacity: .5;
       background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'><path d='M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z' fill='%23000'/></svg>");
       background-size: 100% auto;
@@ -280,7 +280,7 @@ html.android .row .col-33 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 // .agree-block {
@@ -312,6 +312,7 @@ html.android .row .col-33 {
 
 .agree-block {
   .flexbox();
+  .align-items(center);
   margin-bottom: 15px;
   .item-media {
     .flexbox();
@@ -335,8 +336,13 @@ html.android .row .col-33 {
 }
 
 html.android .agree-block {
+  .align-items(flex-end);
   .item-inner {
     width: 90%;
+    line-height: 16px;
+  }
+  .item-media {
+    display: block;
   }
   i.icon-form-checkbox {
     margin-top: -5px;

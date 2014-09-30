@@ -154,7 +154,6 @@ define(['views/riskView'], function (View) {
 	}
 
 	function nextSubmit() {
-		khApp.closeModal();
 		mainView.loadPage('review.html');
 	}
 

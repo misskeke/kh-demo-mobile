@@ -105,7 +105,6 @@ define(['views/videoView'], function (View) {
 
 	function nextSubmit() {
 		mainView.loadPage('cert.html');
-		khApp.closeModal();
 	}
 
 	function successTest() {

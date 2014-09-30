@@ -7,6 +7,7 @@ define(['utils', 'text!popup/risk.html'], function (Utils, riskPopupTemplate) {
 
 		$$('#riskContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
+		Utils.setButtonPosition('.risk-submit-button');
 	}
 
 	function renderPopup(params) {

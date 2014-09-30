@@ -14,7 +14,7 @@ require.config({
 	}
 });
 
-require(['Framework7', 'router'], function (Framework7, Router) {
+require(['Framework7', 'router', 'utils'], function (Framework7, Router, Utils) {
 	window.$$ = window.Dom7;
 
 	var device = Framework7.prototype.device;
@@ -27,6 +27,7 @@ require(['Framework7', 'router'], function (Framework7, Router) {
 			cache: false,
 			pushState: false,
 			swipeBackPage: false,
+			preloadPreviousPage: false,
 			popupCloseByOutside: false,
 			animateNavBackIcon: true,
 			modalTitle: '系统消息',
@@ -35,11 +36,17 @@ require(['Framework7', 'router'], function (Framework7, Router) {
 			smartSelectBackText: '完成',
 			smartSelectBackTemplate: '<div class="left sliding"><a href="#" class="back link"><i class="icon icon-back"></i><span>{{backText}}</span></a></div>'
 		});
+
+		// Hack for android virtual keyboard.
+		$$(window).on('resize', function () {
+			Utils.setButtonPosition('.bottom-button');
+		});
 	} else {
 		window.khApp = new Framework7({
 			cache: false,
 			pushState: false,
 			swipeBackPage: false,
+			preloadPreviousPage: false,
 			popupCloseByOutside: false,
 			animateNavBackIcon: true,
 			modalTitle: '系统消息',

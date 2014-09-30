@@ -7,6 +7,7 @@ define(['utils'], function (Utils) {
 
 		$$('#depositoryContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
+		Utils.setButtonPosition('.depository-next-button');
 		resetSelect();
 	}
 

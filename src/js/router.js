@@ -34,6 +34,7 @@ define(['GS'], function (GS) {
 		$$(document).on('pageBeforeInit', function (e) {
 			var page = e.detail.page;
 			load(page.name, page.query);
+			khApp.closeModal();
 		});
 
 		$$('.logout').on('click', GS.logout);
@@ -44,7 +45,7 @@ define(['GS'], function (GS) {
 			mainView.loadPage(GS.startPage, false);
 		} else {
 			var currentUser = GS.getCurrentUser();
-			mainView.loadPage(currentUser.node + '.html');
+			mainView.loadPage('account.html');
 		}
 	}
 

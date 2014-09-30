@@ -11,6 +11,7 @@ define(['utils'], function (Utils) {
 
 		$$('#profileContent').html(renderTemplate);
 		Utils.bindEvents(params.bindings);
+		Utils.setButtonPosition('.profile-next-button');
 		resetSelect();
 	}
 

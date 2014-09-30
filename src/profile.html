@@ -17,6 +17,7 @@
 <div class="pages navbar-through no-toolbar">
 	<div data-page="profile" class="page">
 		<div class="page-content" id="profileContent">
+			<script id="profileTemplate" type="text/template">
 			<div class="indicator">
 				<ol class="step clearfix">
 					<li class="step-item current">身份验证</li>
@@ -24,7 +25,6 @@
 					<li class="step-item">三方存管</li>
 				</ol>
 			</div>
-			<script id="profileTemplate" type="text/template">
 			<div class="list-block">
 				<ul>
 					<li>
@@ -40,19 +40,9 @@
 					<li>
 						<div class="item-content">
 							<div class="item-inner">
-								<div class="item-title label">身份证号</div>
+								<div class="item-title label">身份证号码</div>
 								<div class="item-input">
 									<input type="text" name="cid" placeholder="您的18位二代身份证号" value="{{model.cid}}">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="item-content">
-							<div class="item-inner">
-								<div class="item-title label">身份证有效期</div>
-								<div class="item-input">
-									<input type="date" name="aaa">
 								</div>
 							</div>
 						</div>
@@ -63,6 +53,28 @@
 								<div class="item-title label">身份证住址</div>
 								<div class="item-input">
 									<textarea name="cidAddr" placeholder="您的身份证住址">{{model.cidAddr}}</textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+							<div class="item-title label">签发机关</div>
+								<div class="item-input">
+									<input type="text"  name="cidSignDept" maxlength="30" placeholder="身份证签发机关">
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title label">有效期限</div>
+								<div class="item-input">
+									<input type="text" class="select-date" id="cidStartDate" name="cidStartDate" readOnly="readOnly" value="2011.11.11">
+									<span class="mark">-</span>
+									<input type="text" class="select-date" id="cidEndDate" name="cidEndDate" readOnly="readOnly" value="2021.11.11">
 								</div>
 							</div>
 						</div>
