@@ -33,7 +33,7 @@ define(['utils'], function (Utils) {
 				accountInfo: accountInfo
 			});
 		}
-		console.log(accountsModel);
+		// console.log(accountsModel);
 
 		return {model: accountsModel};
 	}

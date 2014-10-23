@@ -43,7 +43,19 @@ define(['views/departmentView'], function (View) {
 	}
 
 	function selectFromRecommend() {
-		startSelect('recommendSelect', 'api/department.json');
+		// startSelect('recommendSelect', 'api/department.json');
+		$$.ajax({
+			url: 'api/department.json',
+			type: 'GET',
+			success: function (data) {
+				data = JSON.parse(data);
+				if (data.errorNo === 0) {
+					khApp.hideIndicator();
+					View.renderName('111');
+					View.renderBadge('recommend');
+				}
+			}
+		});
 	}
 
 	function selectFromNearby() {

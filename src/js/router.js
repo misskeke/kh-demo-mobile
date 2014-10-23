@@ -27,6 +27,19 @@ define(['GS'], function (GS) {
 		deps        : 'deps'
 	};
 
+	var mainNodes = {
+		account: 'account.html',
+		department: 'department.html',
+		collect: 'collect.html',
+		profile: 'profile.html',
+		video: 'video.html',
+		cert: 'cert.html',
+		password: 'password.html',
+		depository: 'depository.html',
+		risk: 'risk.html',
+		review: 'review.html'
+	};
+
 	/**
 	 * Init router, that handle page events
 	 */
@@ -34,7 +47,6 @@ define(['GS'], function (GS) {
 		$$(document).on('pageBeforeInit', function (e) {
 			var page = e.detail.page;
 			load(page.name, page.query);
-			khApp.closeModal();
 		});
 
 		$$('.logout').on('click', GS.logout);
@@ -62,8 +74,37 @@ define(['GS'], function (GS) {
 		}
 	}
 
+	function preprocess(content, url, next) {
+		var isMainNode = false;
+
+		for (var node in mainNodes) {
+			if (mainNodes[node] === url) {
+				isMainNode = true;
+				$$.ajax({
+					type: 'GET',
+					data: null,
+					url: url + '?rnd=' + new Date().getTime(),
+					success: function (data) {
+						next(data);
+					},
+					error: function () {
+						khApp.hideIndicator();
+						khApp.closeModal();
+						khApp.alert(MESSAGE_TIMEOUT);
+					}
+				});
+				break;
+			}
+		}
+
+		if (!isMainNode) {
+			return content;
+		}
+	}
+
 	return {
 		init: init,
-		load: load
+		load: load,
+		preprocess: preprocess
 	};
 });

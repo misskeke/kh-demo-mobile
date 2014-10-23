@@ -1,4 +1,10 @@
-define(['views/accountView'], function (View) {
+define(['views/accountView', 'GS'], function (View, GS) {
+
+	var APP_account = {
+		stockAccount: '',
+		fundAccount: '',
+		otherAccount: ''
+	};
 
 	var bindings = [{
 		element: '.account-next-button',
@@ -11,20 +17,29 @@ define(['views/accountView'], function (View) {
 	}];
 
 	function init() {
-		khApp.showIndicator();
-		$$.ajax({
-			url: 'api/account.json',
-			type: 'GET',
-			success: function (data) {
-				data = JSON.parse(data);
-				if (data.errorNo === 0) {
-					View.render({
-						model: data,
-						bindings: bindings
-					});
-				}
-				khApp.hideIndicator();
-			}
+		// khApp.showIndicator();
+		// $$.ajax({
+		// 	url: 'api/account.json',
+		// 	type: 'GET',
+		// 	success: function (data) {
+		// 		data = JSON.parse(data);
+		// 		if (data.errorNo === 0) {
+		// 			View.render({
+		// 				model: data,
+		// 				bindings: bindings
+		// 			});
+		// 		}
+		// 		khApp.hideIndicator();
+		// 	}
+		// });
+
+		GS.getData('api/account.json', initView);
+	}
+
+	function initView(data) {
+		View.render({
+			model: data,
+			bindings: bindings
 		});
 	}
 
@@ -55,17 +70,23 @@ define(['views/accountView'], function (View) {
 			}
 		});
 
-		return {
-			stockActs: stockActs,
-			fundActs: fundActs,
-			otherActs: otherActs
-		}
+		APP_account.stockAccount = stockActs;
+		APP_account.fundAccount  = fundActs;
+		APP_account.otherAccount = otherActs;
 	}
 
 	function nextSubmit() {
-		var resultData = collectResult();
-		console.log(resultData);
-		mainView.loadPage('department.html');
+		collectResult();
+		console.log(APP_account);
+		if (!APP_account.stockAccount || !APP_account.fundAccount) {
+			khApp.alert("需同时选择任意股东户或基金户");
+			return;
+		}
+		// console.log(resultData);
+		mainView.loadPage({
+			url: 'department.html',
+			ignoreCache: true
+		});
 	}
 
 	return {

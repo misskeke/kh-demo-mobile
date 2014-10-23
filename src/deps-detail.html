@@ -18,21 +18,19 @@
   <div data-page="depsDetail" class="page">
     <div class="page-content" id="depsDetailContent">
       <script id="depsDetailTemplate" type="text/template">
-      	<div class="content-block-title">营业部详细资料</div>
-      	  <div class="list-block">
-      	    <ul>
-      	    {{#model.infos}}
-      	      <li class="item-content">
-      	        <div class="item-inner">
-      	          <div class="item-title">
-      	            <span>{{key}}</span>
-      	            <span class="item-value">{{value}}</span>
-      	          </div>
-      	        </div>
-      	      </li>
-      	    {{/model.infos}}
-      	    </ul>
-      	</div>
+        <div class="content-block-title">营业部详细资料</div>
+          <div class="list-block">
+            <ul>
+            {{#model.infos}}
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title label">{{key}}</div>
+                  <div class="item-value">{{value}}</div>
+                </div>
+              </li>
+            {{/model.infos}}
+            </ul>
+        </div>
       </script>
     </div>
   </div>

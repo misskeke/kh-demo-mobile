@@ -100,15 +100,7 @@
 			{{/each}}
 			</script>
 			<script id="departmentTemplate" type="text/template">
-			{{#if model.departmentsRecommend}}
-				<a href="#" class="item-link smart-select" id="recommendSelect" data-page-title="推荐营业部">
-					<select name="recommend" data-from="recommend">
-					{{#each model.departmentsRecommend}}
-						<option value="{{value}}">{{department}}</option>
-					{{/each}}
-					</select>
-				</a>
-			{{/if}}
+
 			{{#if model.departmentsNearby}}
 				<a href="#" class="item-link smart-select" id="nearbySelect" data-page-title="附近营业部">
 					<select name="nearby" data-from="nearby">

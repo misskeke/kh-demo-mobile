@@ -12,6 +12,12 @@ define(['views/collectView'], function (View) {
 		element: '#cardBack',
 		event: 'click',
 		handler: uploadBack
+	}, {
+		element: '#protocalLink',
+		event: 'click',
+		handler: function () {
+			mainView.loadPage('protocal-upload.html');
+		}
 	}];
 
 	function init() {

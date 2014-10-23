@@ -1,4 +1,10 @@
 define(['services/openTypeService'], function (OTS) {
+	//常量JS
+	var MESSAGE_TIMEOUT 	= "网络或服务异常，请检查手机网络情况后重试！";
+	var MESSAGE_INITFAIL 	= "初始化失败，请注销后重新登陆再试！";
+	var MESSAGE_INITUN 		= "初始化未完成，请稍后再试！";
+	//////////////////////////////////////////////////////////////////////
+
 	var $CONFIG = null;
 	init();
 
@@ -77,6 +83,32 @@ define(['services/openTypeService'], function (OTS) {
 		});
 	}
 
+	function getData(url, cb) {
+		khApp.showIndicator();
+		$$.ajax({
+			url: url + '?rnd=' + new Date().getTime(),
+			type: 'GET',
+			timeout: 15000, //超时时间设置，单位毫秒
+			success: function (data) {
+				khApp.hideIndicator();
+				data = JSON.parse(data);
+				if (data.errorNo === 0) {
+					cb(data);
+				} else {
+					khApp.alert(data.errorInfo);
+				}
+			},
+			error: function() {
+				khApp.hideIndicator();
+				khApp.alert(MESSAGE_TIMEOUT);
+			},
+			timeout: function() {
+				khApp.hideIndicator();
+				khApp.alert(MESSAGE_TIMEOUT);
+			}
+		});
+	}
+
 	return {
 		getSid: getSid,
 		getCurrentUser: getCurrentUser,
@@ -85,6 +117,7 @@ define(['services/openTypeService'], function (OTS) {
 		isLogin: isLogin,
 		logout: logout,
 		checkUpdate: checkUpdate,
-		startPage: startPage
+		startPage: startPage,
+		getData: getData
 	};
 });

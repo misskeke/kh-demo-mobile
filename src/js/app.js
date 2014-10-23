@@ -36,11 +36,6 @@ require(['Framework7', 'router', 'utils'], function (Framework7, Router, Utils) 
 			smartSelectBackText: '完成',
 			smartSelectBackTemplate: '<div class="left sliding"><a href="#" class="back link"><i class="icon icon-back"></i><span>{{backText}}</span></a></div>'
 		});
-
-		// Hack for android virtual keyboard.
-		$$(window).on('resize', function () {
-			Utils.setButtonPosition('.bottom-button');
-		});
 	} else {
 		window.khApp = new Framework7({
 			cache: false,
@@ -53,7 +48,8 @@ require(['Framework7', 'router', 'utils'], function (Framework7, Router, Utils) 
 			modalButtonOk: '确定',
 			modalButtonCancel: '取消',
 			smartSelectBackText: '完成',
-			smartSelectBackTemplate: '<div class="left sliding"><a href="#" class="back link"><i class="icon icon-back"></i><span>{{backText}}</span></a></div>'
+			smartSelectBackTemplate: '<div class="left sliding"><a href="#" class="back link"><i class="icon icon-back"></i><span>{{backText}}</span></a></div>',
+			preprocess: Router.preprocess
 		});
 	}
 
