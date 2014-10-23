@@ -1643,18 +1643,20 @@
 				app.pageAnimCallbacks('after', view, {pageContainer: newPage[0], url: url, position: 'right', oldPage: oldPage, newPage: newPage});
 				if (app.params.pushState) app.pushStateClearQueue();
 				if (!(view.params.swipeBackPage || view.params.preloadPreviousPage)) {
-                    if (view.params.domCache) {
-                        oldPage.addClass('cached');
-                        oldNavbarInner.addClass('cached');
-                    }
-                    else {
-                        if (!(url.indexOf('#') === 0 && newPage.attr('data-page').indexOf('smart-select-') === 0)) {
-                            app.pageRemoveCallback(view, oldPage[0], 'left');
-                            oldPage.remove();
-                            if (dynamicNavbar) oldNavbarInner.remove();
-                        }
-                    }
-                }
+					if (view.params.domCache) {
+						oldPage.addClass('cached');
+						oldNavbarInner.addClass('cached');
+					}
+					else {
+						// oldPage.remove();
+						// oldNavbarInner.remove();
+						if (!(url.indexOf('#content') ===0 && newPage.attr('data-page').indexOf('smart-select-') === 0 || newPage.attr('data-keep-pre'))) {
+							app.pageRemoveCallback(view, oldPage[0], 'left');
+							oldPage.remove();
+							oldNavbarInner.remove();
+						}
+					}
+				}
 				if (view.params.uniqueHistory && historyBecameUnique) {
 					view.refreshPreviousPage();
 				}

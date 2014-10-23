@@ -57,7 +57,7 @@ define(['GS'], function (GS) {
 			mainView.loadPage(GS.startPage, false);
 		} else {
 			var currentUser = GS.getCurrentUser();
-			mainView.loadPage('account.html');
+			mainView.loadPage(currentUser.node + '.html');
 		}
 	}
 
