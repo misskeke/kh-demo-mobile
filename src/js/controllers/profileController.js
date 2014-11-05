@@ -30,7 +30,7 @@ define(['views/profileView', 'text!tpl/date.html'], function (View, dateTemplate
 	}
 
 	function isLongTerm() {
-		var longTerm = document.getElementById('longTerm');
+		var longTerm = $$('#longTerm')[0];
 
 		if (longTerm) {
 			return longTerm.checked
@@ -39,23 +39,24 @@ define(['views/profileView', 'text!tpl/date.html'], function (View, dateTemplate
 		}
 	}
 
-	function liveBindChange() {
-		$$(document).on('click', '#longTerm', function () {
-			if (this.checked) {
-				$$('#dateWrap').hide();
-			} else {
-				$$('#dateWrap').show();
-			}
-		});
-	}
+	// function liveBindChange() {
+	// 	$$(document).on('click', '#longTerm', function () {
+	// 		if (this.checked) {
+	// 			$$('#dateWrap').hide();
+	// 		} else {
+	// 			$$('#dateWrap').show();
+	// 		}
+	// 	});
+	// }
 
-	liveBindChange();
+	// liveBindChange();
 
 	function dateSelect() {
 		var input = this;
-		var longTermTemplate = '<label class="label-checkbox date-content agree-block"> <input type="checkbox" id="longTerm"> <div class="item-media"> <i class="icon icon-form-checkbox"></i> </div> <div class="item-inner"> <div class="item-title">身份证有效期是否为长期有效</div> </div> </label>'
-		var cidStartDateTemplate = '<div id="dateSelector">' + dateTemplate + '</div>';
-		var cidEndDateTemplate = '<div id="dateSelector">' + dateTemplate + longTermTemplate + '</div>';
+        var isLongTermFlag = $$(input).data('isLongTerm');
+        var longTermTemplate = '<label class="label-checkbox date-content agree-block"> <input type="checkbox"' + (isLongTermFlag? 'checked' : '') + ' id="longTerm"> <div class="item-media"> <i class="icon icon-form-checkbox"></i> </div> <div class="item-inner"> <div class="item-title">身份证有效期是否为长期有效</div> </div> </label>'
+        var cidStartDateTemplate = '<div id="dateSelector">' + dateTemplate + '</div>';
+        var cidEndDateTemplate = '<div id="dateSelector">' + dateTemplate + longTermTemplate + '</div>';
 
 		khApp.modal({
 			title: '请选择',
@@ -68,9 +69,9 @@ define(['views/profileView', 'text!tpl/date.html'], function (View, dateTemplate
 					text: '确定',
 					onClick: function () {
 						var collectValue;
-						var isLongTermVar = isLongTerm();
 
-						if (isLongTermVar) {
+						if (isLongTerm()) {
+                            $$(input).data('isLongTerm', true);
 							collectValue = '长期有效';
 						} else {
 							var selectedData = khApp.formToJSON('#dateSelector');
@@ -81,6 +82,7 @@ define(['views/profileView', 'text!tpl/date.html'], function (View, dateTemplate
 							}
 
 							collectValue = selectedCollect.join('.');
+                            $$(input).data('isLongTerm', false);
 						}
 
 						input.value = collectValue;
