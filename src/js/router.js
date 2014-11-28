@@ -53,8 +53,8 @@ define(['GS'], function (GS) {
 		$$('.version').on('click', GS.checkUpdate);
 
 		if (!GS.isLogin()) {
-			// mainView.loadPage('login.html');
-			mainView.loadPage(GS.startPage, false);
+			mainView.loadPage('maintain.html');
+			// mainView.loadPage(GS.startPage, false);
 		} else {
 			var currentUser = GS.getCurrentUser();
 			mainView.loadPage(currentUser.node + '.html');
