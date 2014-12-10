@@ -1,0 +1,15 @@
+{
+  "errorNo": 0,
+  "model": {
+    "recDepartment": "杭州推荐营业部",
+    "commission": "1.5‰",
+    "packsList":[
+      {"packageName":"红珊瑚金策略套餐","commission":"0.9‰"},
+      {"packageName":"红珊瑚点金石套餐","commission":"1.2‰"},
+      {"packageName":"红珊瑚金策略套餐","commission":"0.9‰"},
+      {"packageName":"红珊瑚点金石套餐","commission":"1.2‰"},
+      {"packageName":"红珊瑚金策略套餐","commission":"0.9‰"},
+      {"packageName":"红珊瑚点金石套餐","commission":"1.2‰"}
+    ]
+  }
+}

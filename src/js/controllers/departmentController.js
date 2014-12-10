@@ -12,6 +12,10 @@ define(['views/departmentView'], function (View) {
 		element: '.all-link',
 		event: 'click',
 		handler: selectFromAll
+	}, {
+		element: '.package-detail',
+		event: 'click',
+		handler: redirectToDetail
 	}];
 
 	var afterBindings = [{
@@ -24,9 +28,35 @@ define(['views/departmentView'], function (View) {
 		handler: selectedName
 	}];
 
+	var packsBindings = [{
+		element: '#packages li',
+		event: 'click',
+		handler: handlePackage
+	}];
+
 	function init() {
 		View.render({
 			bindings: bindings
+		});
+
+		laodRecDepartment();
+	}
+
+	function laodRecDepartment() {
+		$$.ajax({
+			url: 'api/department.json',
+			type: 'GET',
+			success: function (data) {
+				data = JSON.parse(data);
+				if (data.errorNo === 0) {
+					View.renderName(data.model.recDepartment);
+					View.renderCommission(data.model.commission);
+					View.renderPackage({
+						bindings: packsBindings,
+						model: data.model
+					});
+				}
+			}
 		});
 	}
 
@@ -73,8 +103,53 @@ define(['views/departmentView'], function (View) {
 
 	function selectedName() {
 		var selectedText = this.options[this.selectedIndex].text;
+		var deptId = this.options[this.selectedIndex].value;
+		var commission = $$(this.options[this.selectedIndex]).data('commission');
+
 		View.renderName(selectedText);
 		View.renderBadge();
+		View.renderCommission(commission);
+		getPacksBy(deptId);
+	}
+
+	function handlePackage() {
+		if (isSelectedPackage(this)) {
+			View.deselectPackage(this);
+		} else {
+			var commission = $$(this).data('commission');
+			View.selectPackage(this, commission);
+		}
+	}
+
+	function isSelectedPackage(li) {
+		return $$(li).hasClass('selected');
+	}
+
+	// function choosePackage() {
+	// 	var commission = $$(this).data('commission');
+
+	// 	View.choosePackage(this);
+	// 	View.changeCommission(commission);
+	// }
+
+	function redirectToDetail() {
+		mainView.loadPage('package.html');
+	}
+
+	function getPacksBy(id) {
+		$$.ajax({
+			url: 'api/department.json',
+			type: 'GET',
+			success: function (data) {
+				data = JSON.parse(data);
+				if (data.errorNo === 0) {
+					View.renderPackage({
+						bindings: packsBindings,
+						model: data.model
+					});
+				}
+			}
+		});
 	}
 
 	function nextSubmit() {

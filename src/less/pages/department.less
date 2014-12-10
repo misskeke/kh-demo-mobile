@@ -51,4 +51,88 @@
   .content-block-title {
     margin-top: 35px;
   }
+  .package-block {
+    position: relative;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    .col-50 {
+      margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .content-block-title {
+      margin-top: 10px;
+    }
+    ul {
+      margin: 15px 15px 0 15px;
+      padding: 0;
+    }
+    li {
+      .border-box();
+      height: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 10px 5px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      &.selected {
+        position: relative;
+        border-width: 2px;
+        border-color: #fd8615;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          .at2x(corner, "png", 10px, 10px);
+        }
+      }
+    }
+    .brand {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      z-index: 99;
+      width: 40px;
+      height: 20px;
+      line-height: 23px;
+      color: #fff;
+      font-size: 13px;
+      background-color: #fd8615;
+      text-align: center;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 5px solid #fd8615;
+      }
+    }
+    .tar {
+      text-align: right;
+      padding-right: 15px;
+      padding-bottom: 10px;
+    }
+  }
+  .package-choosen {
+    margin: 10px 15px;
+    font-size: 12px;
+    .commission {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: -1px;
+      color: #fd8615;
+      background: transparent;
+    }
+  }
 }
