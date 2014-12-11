@@ -6172,6 +6172,30 @@ html.android progress {
   color: #fd8615;
   background: transparent;
 }
+html.android .package-block .row {
+  display: block;
+  margin: 15px 0 0 0 !important;
+}
+html.android .package-block .row:before,
+html.android .package-block .row:after {
+  content: " ";
+  display: table;
+}
+html.android .package-block .row:after {
+  clear: both;
+}
+html.android .package-block .row:before,
+html.android .package-block .row:after {
+  content: " ";
+  display: table;
+}
+html.android .package-block .row:after {
+  clear: both;
+}
+html.android .package-block .col-50 {
+  float: left;
+  margin: 0 2% 10px !important;
+}
 #riskContent .list-block {
   counter-reset: options;
 }
