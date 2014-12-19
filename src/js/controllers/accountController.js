@@ -42,7 +42,8 @@ define(['views/accountView', 'GS'], function (View, GS) {
         $$('body').on('change', 'input[value="3"]', function () {
             if (this.checked === true) {
                 if (!$$('input[value="011"]')[0].checked) {
-                    $$('input[value="011"]').parent().trigger('click');
+                    $$('input[value="011"]')[0].checked = true;
+                    $$('input[value="011"]').trigger('change');
                     checkSignature();
                 }
             }
@@ -51,7 +52,8 @@ define(['views/accountView', 'GS'], function (View, GS) {
         $$('body').on('change', 'input[value="011"]', function () {
             if (this.checked === false) {
                 if ($$('input[value="3"]')[0].checked) {
-                    $$('input[value="3"]').parent().trigger('click');
+                    $$('input[value="3"]')[0].checked = false;
+                    $$('input[value="3"]').trigger('change');
                 }
             }
         });
