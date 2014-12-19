@@ -5,9 +5,9 @@ define(['utils'], function (Utils) {
 	function render(params) {
 		var template = $$('#accountTemplate').html();
 		var compiledTemplate = Template7.compile(template);
-		var assemblyModel = assembly(params.model);
-		// console.log(assemblyModel);
-		var renderTemplate = compiledTemplate(assemblyModel);
+		var assembleModel = assemble(params.model);
+		// console.log(assembleModel);
+		var renderTemplate = compiledTemplate(assembleModel);
 
 		$$('#accountContent').html(renderTemplate);
 		checkDefaultSelected();
@@ -15,7 +15,7 @@ define(['utils'], function (Utils) {
 		Utils.setButtonPosition('.account-next-button');
 	}
 
-	function assembly(model) {
+	function assemble(model) {
 		var accounts = model.accountTypeListMap;
 		var accountsModel = [];
 

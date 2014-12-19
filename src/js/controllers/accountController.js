@@ -34,7 +34,28 @@ define(['views/accountView', 'GS'], function (View, GS) {
 		// });
 
 		GS.getData('api/account.json', initView);
+
+        liveBind();
 	}
+
+    function liveBind() {
+        $$('body').on('change', 'input[value="3"]', function () {
+            if (this.checked === true) {
+                if (!$$('input[value="011"]')[0].checked) {
+                    $$('input[value="011"]').parent().trigger('click');
+                    checkSignature();
+                }
+            }
+        });
+
+        $$('body').on('change', 'input[value="011"]', function () {
+            if (this.checked === false) {
+                if ($$('input[value="3"]')[0].checked) {
+                    $$('input[value="3"]').parent().trigger('click');
+                }
+            }
+        });
+    }
 
 	function initView(data) {
 		View.render({
@@ -46,6 +67,18 @@ define(['views/accountView', 'GS'], function (View, GS) {
 	function checkSelected() {
 		View.checkSelected(this);
 	}
+
+    function checkSignature() {
+        var select = $$('select[name="3"]')[0];
+        var options = select.options;
+
+        for (var i = 0; i < options.length; i++) {
+            if (options[i].value === '99') {
+                options[i].selected = true;
+                View.checkSelected(select);
+            }
+        }
+    }
 
 	function collectResult() {
 		var option = $$('#accountContent option');
@@ -59,7 +92,6 @@ define(['views/accountView', 'GS'], function (View, GS) {
 
 			var type = $$(this).data('type');
 			var code = this.value;
-
 
 			if (type === '1002') {
 				stockActs += code + ',';
