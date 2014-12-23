@@ -75,8 +75,13 @@ define([], function () {
                     var itemList = [];
 
                     for (var i = 0; i < data.orgList.length; i++) {
-                        var branch = data.orgList[i].branch_name;
-                        itemList.push({'item': branch});
+                        var branch_name = data.orgList[i].branch_name;
+                        var branch_no = data.orgList[i].branch_no;
+
+                        itemList.push({
+                            'item': branch_name,
+                            'value': branch_no
+                        });
                     }
 
                     callback && callback(itemList);

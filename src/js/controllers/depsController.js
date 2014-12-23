@@ -27,11 +27,12 @@ define(['views/depsView', 'models/depsModel'], function (View, Model) {
 
 	function selectHandler() {
 		var input = $$('#depsList').find('input:checked');
+        var depsno = input.val();
 		var parent = input.parent();
 		var depsname = parent.find('.item-title').html();
 
 		mainView.goBack({
-            url: 'department.html?depsname=' + depsname,
+            url: 'department.html?depsname=' + depsname + '&depsno=' + depsno,
             forceUrl: true
         });
 	}
