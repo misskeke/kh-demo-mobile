@@ -10,7 +10,7 @@ define(['utils'], function (Utils) {
 	}
 
 	function renderTitle(text) {
-		var navTitle = $$('.navbar .center').eq(1);
+		var navTitle = $$('.navbar .center').eq(0);
 		navTitle.text(text);
 	}
 
