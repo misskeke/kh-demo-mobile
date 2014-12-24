@@ -6285,6 +6285,8 @@ html.android progress {
   margin-right: 3px;
 }
 #depsDetailContent .list-block .item-value {
+  width: 65%;
+  text-align: right;
   font-size: 15px;
   color: #666;
 }
