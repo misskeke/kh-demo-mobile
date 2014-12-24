@@ -4,7 +4,16 @@ define(['views/provView', 'models/depsModel'], function (View, Model) {
 		element: '#provList .item-link',
 		event: 'click',
 		handler: selectProv
-	}];
+	}, {
+        element: '#provBack',
+        event: 'click',
+        handler: function () {
+            mainView.goBack({
+                url: 'department.html',
+                forceUrl: true
+            });
+        }
+    }];
 
 	function init() {
 		var saved = Model.saved();
