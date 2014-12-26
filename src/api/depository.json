@@ -1,11 +1,16 @@
 {
   "errorNo": 0,
-  "model": {
-    "banks": [
-      {"code": "000", "name": "中信银行", "type": "01", "protocalId": "aaa"},
-      {"code": "001", "name": "招商银行", "type": "11", "protocalId": "bbb"},
-      {"code": "002", "name": "中国银行", "type": "01", "protocalId": "ccc"},
-      {"code": "003", "name": "中国建设银行", "type": "00", "protocalId": "ddd"}
-    ]
-  }
+  "bankList": [
+    {"code": "000", "id": "icbc", "name": "中信银行", "type": "01", "econtract_id": "aaa"},
+    {"code": "001", "id": "icbc", "name": "招商银行", "type": "11", "econtract_id": "bbb"},
+    {"code": "002", "id": "icbc", "name": "中国银行", "type": "01", "econtract_id": "ccc"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "icbc", "name": "中国建设银行", "type": "00", "econtract_id": "ddd"}
+  ]
 }

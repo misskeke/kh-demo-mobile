@@ -1,13 +1,9 @@
 define(['views/depositoryView'], function (View) {
 
 	var bindings = [{
-		element: '#bank',
-		event: 'change',
-		handler: selectBank
-	}, {
-		element: '.depository-next-button',
+		element: '.depository-list a',
 		event: 'click',
-		handler: nextSubmit
+		handler: selectBank
 	}];
 
 	function init() {
@@ -19,7 +15,7 @@ define(['views/depositoryView'], function (View) {
 				data = JSON.parse(data);
 				if (data.errorNo === 0) {
 					View.render({
-						model: data.model,
+						model: data.bankList,
 						bindings: bindings
 					});
 				}
@@ -29,31 +25,14 @@ define(['views/depositoryView'], function (View) {
 	}
 
 	function selectBank() {
-		var selectedOption = this.options[this.selectedIndex],
-			type = $$(selectedOption).data('type'),
-			text = selectedOption.text,
-			id = $$(selectedOption).data('protocal-id');
+		var name = $$(this).find('.bank-name').text();
+		var type = $$(this).data('type');
+		var protocalId = $$(this).data('protocal-id');
 
-		console.log(type);
-		switch (type) {
-			case '00':
-				View.noNeedInput(); // 00: 无需填写卡号密码
-				break;
-			case '01':
-				View.onlyCardNoInput(); // 01: 只需填写卡号
-				break;
-			case '11':
-				View.bothCardNoPswInput(); // 11: 同时需要填写卡号和密码
-				break;
-		}
-		View.syncProtocal(text, id);
-	}
-
-	function nextSubmit() {
-		mainView.loadPage('risk.html');
+		mainView.loadPage('depository-detail.html?name=' + name + '&type=' + type + '&econtract_id=' + protocalId);
 	}
 
 	return {
 		init: init
-	};
+	}
 });

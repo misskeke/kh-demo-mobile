@@ -1,8 +1,6 @@
 @font-face {
   font-family: "iconfont";
-  src: url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */ url('../font/iconfont.svg#iconfont') format('svg');
-  
-  /* iOS 4.1- */
+  src: url('../font/iconfont.woff') format('woff');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -69,6 +67,20 @@
 .icon-sign:before {
   content: "\e614";
 }
+<<<<<<< HEAD
+=======
+.icon-kefu:before {
+  content: "\e618";
+}
+.icon-camera:before {
+  content: "\e61a";
+}
+/* bank icon */
+.icon-icbc:before {
+  content: "\e61e";
+  color: #e60012;
+}
+>>>>>>> 39f7950... Redesign depository
 html,
 body {
   position: relative;
@@ -6078,6 +6090,7 @@ html.android progress {
 #departmentContent .content-block-title {
   margin-top: 35px;
 }
+<<<<<<< HEAD
 #departmentContent .package-block {
   position: relative;
   background-color: #fff;
@@ -6231,6 +6244,45 @@ html.android .package-block .row:after {
 html.android .package-block .col-50 {
   float: left;
   margin: 0 2% 10px !important;
+=======
+#depositoryContent .depository-list {
+  width: 100%;
+  padding: 0;
+  margin: 15px 0;
+  border-style: solid;
+  border-color: rgba(204, 204, 204, 0.5);
+  border-width: 1px 0;
+  font-size: 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+#depositoryContent .depository-list li {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.333333333%;
+  text-align: center;
+  bottom: -1px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+  border-right: 1px solid rgba(204, 204, 204, 0.5);
+}
+#depositoryContent .depository-list li a {
+  display: block;
+  padding: 10px 0;
+}
+#depositoryContent .depository-list li a.active-state {
+  opacity: .6;
+}
+#depositoryContent .depository-list li .iconfont {
+  font-size: 30px;
+}
+#depositoryContent .depository-list li .bank-name {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  color: #999;
+>>>>>>> 39f7950... Redesign depository
 }
 #riskContent .list-block {
   counter-reset: options;
