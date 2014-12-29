@@ -1,6 +1,8 @@
 @font-face {
   font-family: "iconfont";
-  src: url('../font/iconfont.woff') format('woff');
+  src: url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */ url('../font/iconfont.svg#iconfont') format('svg');
+  
+  /* iOS 4.1- */
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -67,8 +69,6 @@
 .icon-sign:before {
   content: "\e614";
 }
-<<<<<<< HEAD
-=======
 .icon-kefu:before {
   content: "\e618";
 }
@@ -80,7 +80,6 @@
   content: "\e61e";
   color: #e60012;
 }
->>>>>>> 39f7950... Redesign depository
 html,
 body {
   position: relative;
@@ -6090,7 +6089,6 @@ html.android progress {
 #departmentContent .content-block-title {
   margin-top: 35px;
 }
-<<<<<<< HEAD
 #departmentContent .package-block {
   position: relative;
   background-color: #fff;
@@ -6244,7 +6242,7 @@ html.android .package-block .row:after {
 html.android .package-block .col-50 {
   float: left;
   margin: 0 2% 10px !important;
-=======
+}
 #depositoryContent .depository-list {
   width: 100%;
   padding: 0;
@@ -6282,7 +6280,6 @@ html.android .package-block .col-50 {
   margin: 10px 0 0 0;
   font-size: 14px;
   color: #999;
->>>>>>> 39f7950... Redesign depository
 }
 #riskContent .list-block {
   counter-reset: options;
