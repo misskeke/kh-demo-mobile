@@ -16,7 +16,11 @@ define(['views/departmentView'], function (View) {
 		element: '.package-detail',
 		event: 'click',
 		handler: redirectToDetail
-	}];
+	}, {
+        element:'.item-search',
+        event:'click',
+        handler: selectResult
+    }];
 
 	var afterBindings = [{
 		element: '[name=nearby]',
@@ -150,6 +154,55 @@ define(['views/departmentView'], function (View) {
 				}
 			}
 		});
+	}
+
+	function isValidQuery(str) {
+	    var reg = /^[1][34578]\d{9}$/;
+	    return reg.test(str);
+	}
+
+	var queryCache = [];
+
+	function selectResult() {
+	    var verifyValue = $$('#recphone').val();
+	    var isPassed = isValidQuery(verifyValue);
+	    var isCached;
+
+	    for (var i = 0; i < queryCache.length; i++) {
+	        if (queryCache[i] === verifyValue) {
+	            isCached = true;
+	        }
+	    }
+
+	    if(isPassed) {
+	        if (isCached) {
+	            console.log(queryCache);
+	        } else {
+	            khApp.showIndicator();
+	            $$.ajax({
+	                url: 'api/verify-marketer.json',
+	                type: 'GET',
+	                success: function (data) {
+	                    data = JSON.parse(data);
+	                    if (data.error_no === 0) {
+	                        $$('.have-result').show();
+	                        $$('.error-result').hide();
+	                        View.renderSearch({model: data.resultList});
+	                        queryCache.push(verifyValue);
+	                        khApp.hideIndicator();
+	                    } else {
+	                        $$('.have-result').hide();
+	                        $$('.error-result').show();
+	                        khApp.hideIndicator();
+	                    }
+	                }
+	            });
+	        }
+	    } else {
+	        $$('.have-result').hide();
+	        $$('.error-result').show();
+	        khApp.hideIndicator();
+	    }
 	}
 
 	function nextSubmit() {

@@ -67,6 +67,14 @@ define(['utils'], function (Utils) {
 		$$('.package-choosen').append('<mark class="commission">' + commission + '</mark>');
 	}
 
+	function renderSearch(params){
+		var template = $$('#marketerTemplate').html();
+		var compiledTemplate = Template7.compile(template);
+		var renderTemplate = compiledTemplate({model: params.model});
+
+		$$('.have-result').html('').append(renderTemplate);
+	}
+
 	return {
 		render: render,
 		renderName: renderName,
@@ -75,6 +83,7 @@ define(['utils'], function (Utils) {
 		renderPackage: renderPackage,
 		selectPackage: selectPackage,
 		deselectPackage: deselectPackage,
-		renderCommission: renderCommission
+		renderCommission: renderCommission,
+		renderSearch: renderSearch
 	};
 });

@@ -45,6 +45,35 @@
 					</ul>
 				</div>
 			</div>
+			<div class="content-block-title">
+				推荐人<span>（选填）</span>
+			</div>
+			<div class="list-block">
+				<ul>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-input">
+									<input type="tel" maxlength="11" id="recphone" name="recphone" placeholder="营销人员代码或手机号">
+									<a class="item-search button button-fill" href="#">查询</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="research-result">
+				<div class="have-result" style="">
+					<!-- <b><span>姓名：周杰伦</span>员工代码：123456789</b>
+						                <b>执业证书编号：S123123123123123123123</b>
+					<b><span>手机号码：18763435435</span>营销展示区域：上海地区</b>
+					<b>所属营业部：上海陆家嘴营业部</b> -->
+
+				</div>
+				<div class="error-result" style="display:none;">
+					<p><i class="iconfont icon-noresult"></i>请输入有效的营销人员代码或手机号码</p>
+				</div>
+			</div>
 			<div class="package-block">
 				<div class="brand">套餐</div>
 				<div class="content-block-title">请选择服务套餐<small>（可选）</small></div>
@@ -59,6 +88,14 @@
 			<div class="content-block">
 				<a href="#" class="button button-big button-fill department-next-button">下一步</a>
 			</div>
+			<script id="marketerTemplate" type="text/template">
+			{{#each model}}
+				<b><span>姓名：{{broker_name}}</span>员工代码：{{broker_code}}</b>
+			    <b>执业证书编号：{{qualify_no}}</b>
+				<b><span>手机号码：{{mobile}}</span>营销展示区域：{{address}}</b>
+				<b>所属营业部：{{branch_name}}</b>
+			{{/each}}
+			</script>
 			<script id="departmentTemplate" type="text/template">
 			{{#if model.departmentsNearby}}
 				<a href="#" class="item-link smart-select" id="nearbySelect" data-page-title="附近营业部">
