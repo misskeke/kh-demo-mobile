@@ -1,7 +1,7 @@
 define(['views/guideView'], function (View) {
 
 	var bindings = [{
-		element: '.entrance a',
+		element: '.entrance',
 		event: 'click',
 		handler: jumpPage
 	}];
@@ -11,15 +11,15 @@ define(['views/guideView'], function (View) {
 			bindings: bindings
 		});
 
-		// autoHeightBlock();
+		autoHeightBlock();
 	}
 
 	function autoHeightBlock() {
 		var viewHeight = document.documentElement.clientHeight;
-		var calcHeight = viewHeight - 120;
-		var length = $$('.entrance a').length;
+		var calcHeight = viewHeight - 140 - $$('#extraInfo').height();
+		var length = $$('.entrance').length;
 
-		$$('.entrance a').css('height', calcHeight / length + 'px');
+		$$('.entrance').css('height', calcHeight / length + 'px');
 	}
 
 	function jumpPage() {

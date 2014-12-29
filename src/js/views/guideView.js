@@ -9,7 +9,7 @@ define(['utils', 'services/openTypeService'], function (Utils, OTS) {
 		var compiledTemplate = Template7.compile(template);
 		var renderTemplate = compiledTemplate({model: model});
 
-		$$('.entrance').append(renderTemplate);
+		$$('.entrances').append(renderTemplate);
 		Utils.bindEvents(params.bindings);
 	}
 

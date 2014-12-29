@@ -5788,10 +5788,10 @@ html.android .searchbar.searchbar-active .searchbar-cancel {
   width: 163px;
   margin: 0 auto;
 }
-#guideContent .entrance {
+#guideContent .entrances {
   padding: 20px 5px;
 }
-#guideContent .entrance a {
+#guideContent .entrances .entrance {
   position: relative;
   display: block;
   height: 120px;
@@ -5804,7 +5804,7 @@ html.android .searchbar.searchbar-active .searchbar-cancel {
   color: #fff;
   border-radius: 5px;
 }
-#guideContent .entrance a:before {
+#guideContent .entrances .entrance:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -5816,7 +5816,7 @@ html.android .searchbar.searchbar-active .searchbar-cancel {
   left: 0;
   background-position: 10px bottom;
 }
-#guideContent .entrance a:after {
+#guideContent .entrances .entrance:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -5828,29 +5828,29 @@ html.android .searchbar.searchbar-active .searchbar-cancel {
   right: 0;
   background-position: right bottom;
 }
-#guideContent .entrance a.tel {
+#guideContent .entrances .entrance.tel {
   display: inline;
   color: #ff8b1f;
 }
-#guideContent .entrance .kh {
+#guideContent .entrances .kh {
   background-color: #fec111;
 }
-#guideContent .entrance .kh:before,
-#guideContent .entrance .kh:after {
+#guideContent .entrances .kh:before,
+#guideContent .entrances .kh:after {
   background-image: url(../img/entrance-kh.png);
 }
-#guideContent .entrance .zh {
+#guideContent .entrances .zh {
   background-color: #ff8b1f;
 }
-#guideContent .entrance .zh:before,
-#guideContent .entrance .zh:after {
+#guideContent .entrances .zh:before,
+#guideContent .entrances .zh:after {
   background-image: url(../img/entrance-zh.png);
 }
-#guideContent .entrance .ggt {
+#guideContent .entrances .ggt {
   background-color: #158ed4;
 }
-#guideContent .entrance .ggt:before,
-#guideContent .entrance .ggt:after {
+#guideContent .entrances .ggt:before,
+#guideContent .entrances .ggt:after {
   background-image: url(../img/entrance-ggt.png);
 }
 .login-getcode {
