@@ -8,6 +8,10 @@ define(['views/accountView'], function (View) {
 		element: '#accountList input[type="checkbox"]',
 		event: 'change',
 		handler: syncSelect
+	}, {
+		element: '#accountBack',
+		event: 'click',
+		handler: back
 	}];
 
 	function init(query) {
@@ -99,6 +103,11 @@ define(['views/accountView'], function (View) {
 				$$(target).val(valueReverse.join(' '));
 			}
 		}
+	}
+
+	function back() {
+		View.renderTitle('协议签署');
+		mainView.goBack();
 	}
 
 	return {

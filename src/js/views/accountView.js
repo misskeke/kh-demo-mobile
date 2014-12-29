@@ -10,7 +10,7 @@ define(['utils'], function (Utils) {
 	}
 
 	function renderTitle(text) {
-		$$('.sliding').html(text + '选择');
+		$$('.sliding').html(text);
 	}
 
 	return {
