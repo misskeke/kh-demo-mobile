@@ -4,6 +4,10 @@ define(['views/profileView'], function (View) {
 		element: '.profile-next-button',
 		event: 'click',
 		handler: nextSubmit
+	}, {
+		element: '.copy-above',
+		event: 'click',
+		handler: copyAddress
 	}];
 
 	function init() {
@@ -23,6 +27,11 @@ define(['views/profileView'], function (View) {
 				}
 			}
 		});
+	}
+
+	function copyAddress() {
+		var address = $$('textarea[name="cidAddr"]').val();
+		$$('textarea[name="address"]').val(address);
 	}
 
 	function nextSubmit() {
