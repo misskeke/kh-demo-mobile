@@ -17,23 +17,11 @@ define(['views/depsView', 'models/depsModel'], function (View, Model) {
 	}
 
 	function selectDeps() {
-		var button = $$('.deps-select-button');
-		var input = $$(this).find('input')[0];
+		var depsno = $$(this).find('input').val();
+        var depsname = $$(this).find('.item-title').text();
 
-		setTimeout(function () {
-            selectHandler();
-		}, 200);
-	}
-
-	function selectHandler() {
-		var input = $$('#depsList').find('input:checked');
-        var depsno = input.val();
-		var parent = input.parent();
-		var depsname = parent.find('.item-title').html();
-
-		mainView.goBack({
-            url: 'department.html?depsname=' + depsname + '&depsno=' + depsno,
-            forceUrl: true
+        mainView.reloadPage({
+            url: 'department.html?depsname=' + depsname + '&depsno=' + depsno
         });
 	}
 

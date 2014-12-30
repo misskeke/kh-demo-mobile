@@ -41,10 +41,6 @@ define(['views/departmentView'], function (View) {
             View.renderName(query.depsname);
             View.renderBadge('all');
         }
-
-        if (query.depsno) {
-            console.log(query.depsno);
-        }
     }
 
     function selectFromRecommend() {
