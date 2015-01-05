@@ -5,7 +5,9 @@
       {"code": "000", "name": "中信银行", "type": "01", "protocalId": "aaa"},
       {"code": "001", "name": "招商银行", "type": "11", "protocalId": "bbb"},
       {"code": "002", "name": "中国银行", "type": "01", "protocalId": "ccc"},
-      {"code": "003", "name": "中国建设银行", "type": "00", "protocalId": "ddd"}
+      {"code": "003", "name": "中国建设银行", "type": "00", "protocalId": "ddd"},
+      {"code": "004", "name": "光大银行", "type": "01", "protocalId": "eee", "tip": "请输入银行卡号完成三方存管签约"},
+      {"code": "005", "name": "工商银行", "type": "01", "protocalId": "fff", "tip": "无需卡号，仅完成预指定，需通过银行卡号登录电话银行或网上银行完成签署"}
     ]
   }
 }

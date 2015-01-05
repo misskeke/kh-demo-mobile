@@ -32,18 +32,26 @@ define(['views/depositoryView'], function (View) {
 		var selectedOption = this.options[this.selectedIndex],
 			type = $$(selectedOption).data('type'),
 			text = selectedOption.text,
-			id = $$(selectedOption).data('protocal-id');
+			id = $$(selectedOption).data('protocal-id'),
+			tip = $$(selectedOption).data('tip');
+
+		if (tip) {
+			$$('#bankHint').html('<i class="iconfont icon-emark"></i>' + tip);
+		}
 
 		console.log(type);
 		switch (type) {
 			case '00':
 				View.noNeedInput(); // 00: 无需填写卡号密码
+				$$('#bankHint').show();
 				break;
 			case '01':
 				View.onlyCardNoInput(); // 01: 只需填写卡号
+				$$('#bankHint').show();
 				break;
 			case '11':
 				View.bothCardNoPswInput(); // 11: 同时需要填写卡号和密码
+				$$('#bankHint').hide();
 				break;
 		}
 		View.syncProtocal(text, id);

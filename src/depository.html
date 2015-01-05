@@ -34,7 +34,7 @@
 						<a href="#" class="item-link smart-select">
 							<select name="bank" id="bank">
 								{{#each model.banks}}
-								<option value="{{code}}" data-type="{{type}}" data-protocal-id="{{protocalId}}">{{name}}</option>
+								<option value="{{code}}" data-type="{{type}}" data-protocal-id="{{protocalId}}" data-tip="{{tip}}">{{name}}</option>
 								{{/each}}
 							</select>
 							<div class="item-content">
@@ -80,6 +80,9 @@
 						</div>
 					</li>
 				</ul>
+			</div>
+			<div class="content-block-title" id="bankHint" style="display: none">
+				<i class="iconfont icon-emark"></i>使用网银签约银行开通三方存管后，还需要银行网银确认签约三方存管
 			</div>
 			<div class="content-block-title agree-block" id="agreeProtocal" style="display: none;">
 				<label class="label-checkbox item-content agree-block">
