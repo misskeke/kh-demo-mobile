@@ -12,17 +12,17 @@ define(['views/loginView', 'GS', 'services/openTypeService'], function (View, GS
 
 	function init(query) {
 		var type = query.type;
-		setType(type);
+		// setType(type);
 
 		View.init({
 			bindings: bindings
 		});
 	}
 
-	function setType(type) {
-		var typeData = OTS.getTypeData(type);
-		View.changeType(typeData.title, typeData.explain);
-	}
+	// function setType(type) {
+	// 	var typeData = OTS.getTypeData(type);
+	// 	View.changeType(typeData.title, typeData.explain);
+	// }
 
 	// function isEmail(str){
 	// 	var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
