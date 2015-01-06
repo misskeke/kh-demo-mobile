@@ -6206,14 +6206,14 @@ html.android progress {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-image: url("../img/corner.10px");
+  background-image: url("../img/corner.png");
   background-repeat: no-repeat;
-  background-size: "png" 10px;
+  background-size: 10px 10px;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
   #departmentContent .package-block li.selected:after {
-    background-image: url("../img/corner@2x.10px");
-    background-size: "png" 10px;
+    background-image: url("../img/corner@2x.png");
+    background-size: 10px 10px;
   }
 }
 #departmentContent .package-block .brand {
