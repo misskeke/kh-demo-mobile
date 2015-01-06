@@ -6162,9 +6162,6 @@ html.android progress {
 #departmentContent .all {
   border-left: 1px solid #dfdfdf;
 }
-#departmentContent .content-block-title {
-  margin-top: 35px;
-}
 #departmentContent .package-block {
   position: relative;
   background-color: #fff;
@@ -6275,15 +6272,6 @@ html.android progress {
 }
 #departmentContent .item-input {
   position: relative;
-}
-#departmentContent .item-input .item-search {
-  position: absolute;
-  right: 0px;
-  top: 7px;
-  width: 80px;
-  height: 32px;
-  line-height: 32px;
-  border: none;
 }
 #departmentContent .icon-noresult:before {
   content: "\e601";
