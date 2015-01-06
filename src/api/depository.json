@@ -11,6 +11,8 @@
     {"code": "003", "id": "shenzhenfazhan", "name": "深圳发展银行", "type": "00", "econtract_id": "ddd"},
     {"code": "003", "id": "beijing", "name": "北京银行", "type": "00", "econtract_id": "ddd"},
     {"code": "003", "id": "nanjing", "name": "南京银行", "type": "00", "econtract_id": "ddd"},
-    {"code": "003", "id": "jiaotong", "name": "交通银行", "type": "00", "econtract_id": "ddd"}
+    {"code": "003", "id": "jiaotong", "name": "交通银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "shanghai", "name": "上海银行", "type": "00", "econtract_id": "ddd"},
+    {"code": "003", "id": "guangda", "name": "光大银行", "type": "00", "econtract_id": "ddd"}
   ]
 }

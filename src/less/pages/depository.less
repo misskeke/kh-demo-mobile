@@ -13,7 +13,8 @@
       position: relative;
       display: inline-block;
       .border-box();
-      width: 33.333333333%;
+      width: 33%;
+      width: calc(~"100% / 3");
       text-align: center;
       bottom: -1px;
       border-bottom: 1px solid rgba(204, 204, 204, 0.5);
@@ -35,4 +36,20 @@
       }
     }
   }
+}
+
+.icon-guangda {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  .at2x("icon/guangda", "png", 41px, 30px);
+  background-position: center center;
+}
+
+.icon-shanghai {
+  display: inline-block;
+  width: 30px;
+  height: 42px;
+  .at2x("icon/shanghai", "png", 30px, 30px);
+  background-position: center center;
 }
