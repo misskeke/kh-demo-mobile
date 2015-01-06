@@ -2,11 +2,6 @@ define(['utils'], function (Utils) {
 
 	function render(params) {
 		Utils.bindEvents(params.bindings);
-		rePositionButton();
-	}
-
-	function rePositionButton() {
-		Utils.setButtonPosition('.password-next-button');
 	}
 
 	function toggleInputs(visiable) {
@@ -15,8 +10,6 @@ define(['utils'], function (Utils) {
 		} else if (visiable === 'show') {
 			$$('#sync').show();
 		}
-
-		rePositionButton();
 	}
 
 	return {

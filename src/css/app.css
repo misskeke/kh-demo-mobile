@@ -6052,6 +6052,9 @@ html.android progress {
 #profileContent .item-title {
   color: #999;
 }
+#passwordContent .content-block {
+  margin-top: 35px;
+}
 #videoReady .tip {
   text-align: center;
 }
