@@ -59,7 +59,16 @@ define(['views/departmentView'], function (View) {
 						bindings: packsBindings,
 						model: data.model
 					});
+					defaultCommission();
 				}
+			}
+		});
+	}
+
+	function defaultCommission() {
+		$$('#packages li').each(function () {
+			if ($$(this).data('checked')) {
+				$$(this).trigger('click');
 			}
 		});
 	}
