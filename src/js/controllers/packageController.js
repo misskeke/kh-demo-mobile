@@ -17,5 +17,5 @@ define(['views/packageView'], function (View) {
 
 	return {
 		init: init
-	}
+	};
 });

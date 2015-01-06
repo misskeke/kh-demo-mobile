@@ -34,5 +34,5 @@ define(['views/depositoryView'], function (View) {
 
 	return {
 		init: init
-	}
+	};
 });

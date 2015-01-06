@@ -7,5 +7,5 @@ define([], function () {
 
 	return {
 		render: render
-	}
+	};
 });
