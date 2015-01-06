@@ -6206,14 +6206,14 @@ html.android progress {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-image: url("../img/corner.png");
+  background-image: url("../img/corner.10px");
   background-repeat: no-repeat;
-  background-size: 10px 10px;
+  background-size: "png" 10px;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
   #departmentContent .package-block li.selected:after {
-    background-image: url("../img/corner@2x.png");
-    background-size: 10px 10px;
+    background-image: url("../img/corner@2x.10px");
+    background-size: "png" 10px;
   }
 }
 #departmentContent .package-block .brand {
@@ -6324,7 +6324,8 @@ html.android .package-block .col-50 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 33.333333333%;
+  width: 33%;
+  width: calc(100% / 3);
   text-align: center;
   bottom: -1px;
   border-bottom: 1px solid rgba(204, 204, 204, 0.5);
@@ -6344,6 +6345,36 @@ html.android .package-block .col-50 {
   margin: 10px 0 0 0;
   font-size: 14px;
   color: #999;
+}
+.icon-guangda {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background-image: url("../img/icon/guangda.png");
+  background-repeat: no-repeat;
+  background-size: 41px 30px;
+  background-position: center center;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .icon-guangda {
+    background-image: url("../img/icon/guangda@2x.png");
+    background-size: 41px 30px;
+  }
+}
+.icon-shanghai {
+  display: inline-block;
+  width: 30px;
+  height: 42px;
+  background-image: url("../img/icon/shanghai.png");
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center center;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .icon-shanghai {
+    background-image: url("../img/icon/shanghai@2x.png");
+    background-size: 30px 30px;
+  }
 }
 #riskContent .list-block {
   counter-reset: options;
