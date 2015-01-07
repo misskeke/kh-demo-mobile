@@ -68,7 +68,8 @@ define(['views/departmentView'], function (View) {
 	function defaultCommission() {
 		$$('#packages li').each(function () {
 			if ($$(this).data('checked')) {
-				$$(this).trigger('click');
+				var commission = $$(this).data('commission');
+				View.selectPackage(this, commission);
 			}
 		});
 	}
