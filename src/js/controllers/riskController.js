@@ -181,7 +181,7 @@ define(['views/riskView'], function (View) {
 
 			gauge.fillStyle = coverColor;
 			gauge.font = '60px PT Sans';
-			var text = Math.floor(arcEndStaff / 4.86 * 100);
+			var text = Math.floor(arcEndStaff / 5.6 * 100);
 			var textWidth = gauge.measureText(text).width;
 			gauge.fillText(text, cWidth / 2 - textWidth / 2, cHeight / 2 + 20);
 			gauge.font = '18px PT Sans';
