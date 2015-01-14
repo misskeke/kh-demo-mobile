@@ -1,26 +1,62 @@
 {
-  "errorNo": 0,
-  "model": {
-    "accountGroups": [
-      {
-        "group": "股东账户", "types": [
-          {"value": "a0", "type": "上海A股"},
-          {"value": "a1", "type": "深圳A股"}
-        ]
-      },
-      {
-        "group": "基金账户", "types": [
-          {"value": "b0", "type": "户开放式基金"},
-          {"value": "b1", "type": "深开放式基金"},
-          {"value": "b2", "type": "上海基金"},
-          {"value": "b3", "type": "深圳基金"}
-        ]
-      }
-    ],
-    "protocals": [
-      {"id": "aaa", "name": "《证券交易委托协议代理书》"},
-      {"id": "bbb", "name": "《指定交易协议书》"},
-      {"id": "ccc", "name": "《买者自负承诺书》"}
-    ]
-  }
+  "sn": "",
+  "errorInfo": "暂时无法获取相关信息，请稍候再试",
+  "fundAccountTypeList": [
+    {
+      "branch_no": "8",
+      "subentry": "98",
+      "weight": 10000,
+      "memo": "深市TA",
+      "dict_prompt": "深市TA",
+      "dict_entry": "1003"
+    },
+    {
+      "branch_no": "8",
+      "subentry": "99",
+      "weight": 10000,
+      "memo": "沪市TA",
+      "dict_prompt": "沪市TA",
+      "dict_entry": "1003"
+    }
+  ],
+  "stockAccountTypeList": [
+    {
+      "branch_no": "8",
+      "subentry": "1",
+      "memo": "上海A股",
+      "dict_prompt": "上海A股",
+      "attr1": "",
+      "dict_entry": 1002
+    },
+    {
+      "branch_no": "8",
+      "subentry": "2",
+      "memo": "深圳A股",
+      "dict_prompt": "深圳A股",
+      "attr1": "",
+      "dict_entry": 1002
+    }
+  ],
+  "protocalList": [
+    {
+      "econtract_id": "10063",
+      "econtract_type": "1",
+      "econtract_version": "1.0",
+      "econtract_md5": "22961e1e756ada93b3dd0762b01b5183",
+      "econtract_no": "2005",
+      "econtract_remark": "",
+      "econtract_name": "证券开户及交易委托协议书"
+    },
+    {
+      "econtract_id": "10072",
+      "econtract_type": "1",
+      "econtract_version": "1.0",
+      "econtract_md5": "7c0cf4105d4831fd7563d0c982e270a1",
+      "econtract_no": "2014",
+      "econtract_remark": "",
+      "econtract_name": "上海华信证券自然人投资者网上开户暨电子签名约定书"
+    }
+  ],
+  "qhAccountTypeList": null,
+  "errorNo": 0
 }
